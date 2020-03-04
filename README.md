@@ -4,19 +4,19 @@ mes différents code en Rust
 
 clone : 
 ```bash
-https://github.com/Kagarie/Rust.git
+git https://github.com/Kagarie/Rust.git
 ```
 
 Pour run un simple script rust 
 
-```bash
+```rust
 rustc nom.rs
 ./nom
 ```
 
 Pour run un projet cargo 
 
-```bash
+```rust
 cargo run
 ```
 
