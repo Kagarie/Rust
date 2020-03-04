@@ -20,4 +20,4 @@ Pour run un projet cargo
 cargo run
 ```
 
-commande utiles sour cargo ici -> https://doc.rust-lang.org/cargo/commands/index.html
+commande utiles pour cargo ici -> https://doc.rust-lang.org/cargo/commands/index.html
