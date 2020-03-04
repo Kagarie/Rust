@@ -4,7 +4,7 @@ mes différents code en Rust
 
 clone : 
 ```bash
-git https://github.com/Kagarie/Rust.git
+git clone  https://github.com/Kagarie/Rust.git
 ```
 
 Pour run un simple script rust 
