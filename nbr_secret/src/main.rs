@@ -1,4 +1,4 @@
-//extern crate rand;
+//extern create rand;
 
 use rand::Rng;
 use std::io;
