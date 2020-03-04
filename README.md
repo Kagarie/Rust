@@ -1,3 +1,3 @@
 # RUST
 
-mes différent code en Rust
+mes différents code en Rust
