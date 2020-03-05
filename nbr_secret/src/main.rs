@@ -1,6 +1,4 @@
-//extern crate rand;
-
-use rand::Rng;
+use rand::Rng
 use std::io;
 use std::str::FromStr;
 

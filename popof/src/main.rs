@@ -1,6 +1,6 @@
 #[derive(Debug)]
 struct Personnage {
-	//les string ont besoin d avoir une duree de vie la connaissant pas pour ce programme j'ulisie " &'static " pour lui dire que tu moura à la fin du programme 
+	//les string ont besoin d avoir une duree de vie la connaissant pas pour ce programme j'ulisie " &'static " pour lui dire qu'iu moura à la fin du programme 
 	nom: &'static str,
 	//f32 => nombre flottant attendu il sera code sur 32 bits (f64 max, i => entier i128 max, u => unsigned u128 max)
 	longueur: f32,
@@ -19,7 +19,7 @@ impl Personnage {
 fn main() {
 	//instancions de la structure " Personnage "
 	let perso1=Personnage {
-		//Pour le sring en structure c est un peux plus delicat que pour le reste mais c est l une des facons le plus simple 
+		//Pour le sring en structure c est un peux plus delicat que pour le reste mais c est l une des facons la plus simple 
 		//je peux faire simplement un " nom : " le nom " " car LA DEFINITION DE MA STRUCTURE ME LE PERMET
 		nom: "popof",
 		longueur: 142.0,
