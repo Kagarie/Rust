@@ -1,1 +1,1 @@
-/stockage/kraken/Rust/popof/target/debug/firstProjet: /stockage/kraken/Rust/popof/src/main.rs
+/home/aymeric/code/Rust/popof/target/debug/firstProjet: /home/aymeric/code/Rust/popof/src/main.rs
