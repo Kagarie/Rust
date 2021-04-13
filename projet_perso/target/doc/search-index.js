@@ -1,0 +1,4 @@
+var searchIndex = JSON.parse('{\
+"projet_perso":{"doc":"","i":[[3,"User","projet_perso","",null,null],[12,"nom","","",0,null],[12,"age","","",0,null],[11,"new","","",0,[[["str",15],["i32",15]]]],[11,"get_nom","","",0,[[],["str",15]]],[11,"get_age","","",0,[[],["i32",15]]],[11,"set_nom","","",0,[[["str",15]]]],[11,"set_age","","",0,[[["i32",15]]]],[11,"to_string","","",0,[[["user",3]]]],[5,"main","","",null,[[]]],[11,"from","","",0,[[]]],[11,"into","","",0,[[]]],[11,"borrow","","",0,[[]]],[11,"borrow_mut","","",0,[[]]],[11,"try_from","","",0,[[],["result",4]]],[11,"try_into","","",0,[[],["result",4]]],[11,"type_id","","",0,[[],["typeid",3]]]],"p":[[3,"User"]]}\
+}');
+addSearchOptions(searchIndex);initSearch(searchIndex);
