@@ -43,7 +43,49 @@
 <span id="40">40</span>
 <span id="41">41</span>
 <span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
+<span id="65">65</span>
+<span id="66">66</span>
+<span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
+<span id="75">75</span>
+<span id="76">76</span>
+<span id="77">77</span>
+<span id="78">78</span>
+<span id="79">79</span>
+<span id="80">80</span>
+<span id="81">81</span>
+<span id="82">82</span>
+<span id="83">83</span>
 </pre><div class="example-wrap"><pre class="rust ">
+<span class="kw">use</span> <span class="ident">rand</span>::<span class="ident">random</span>;
 
 <span class="kw">struct</span> <span class="ident">User</span> {
     <span class="ident">nom</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>,
@@ -51,15 +93,26 @@
 }
 
 <span class="kw">impl</span> <span class="ident">User</span> {
+    <span class="doccomment">/**
+    *Constructeur
+    **/</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">nom</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>, <span class="ident">age</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
         <span class="ident">User</span> { <span class="ident">nom</span>, <span class="ident">age</span> }
     }
+
+    <span class="doccomment">/**
+    *Getteur
+    **/</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_nom</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span> {
         <span class="self">self</span>.<span class="ident">nom</span>
     }
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_age</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
         <span class="self">self</span>.<span class="ident">age</span>
     }
+
+    <span class="doccomment">/**
+    *Setteur
+    **/</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_nom</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">nom</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>) {
         <span class="self">self</span>.<span class="ident">nom</span> <span class="op">=</span> <span class="ident">nom</span>;
     }
@@ -67,24 +120,53 @@
         <span class="self">self</span>.<span class="ident">age</span> <span class="op">=</span> <span class="ident">age</span>;
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_string</span>(<span class="ident">User</span>: <span class="kw-2">&amp;</span><span class="ident">User</span>) <span class="op">-</span><span class="op">&gt;</span> () { <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;bonjour je suis {} et j&#39;ai {} ans&quot;</span>, <span class="ident">User</span>.<span class="ident">nom</span>, <span class="ident">User</span>.<span class="ident">age</span>); }
+
+    <span class="doccomment">/**
+    *To string
+    **/</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_string</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> () { <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;bonjour je suis {} et j&#39;ai {} ans&quot;</span>, <span class="self">self</span>.<span class="ident">nom</span>, <span class="self">self</span>.<span class="ident">age</span>); }
 }
 
-
 <span class="kw">fn</span> <span class="ident">main</span>() {
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">personne</span> <span class="op">=</span> <span class="ident">User</span>::<span class="ident">new</span>(<span class="string">&quot;jacque&quot;</span>, <span class="number">20</span>);
-    <span class="ident">User</span>::<span class="ident">to_string</span>(<span class="kw-2">&amp;</span><span class="ident">personne</span>);
-    <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;{}&quot;</span>, <span class="ident">User</span>::<span class="ident">get_nom</span>(<span class="kw-2">&amp;</span><span class="ident">personne</span>));
-    <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;{}&quot;</span>, <span class="ident">User</span>::<span class="ident">get_age</span>(<span class="kw-2">&amp;</span><span class="ident">personne</span>));
+    <span class="comment">//generation d&#39;un nombre aleatoire</span>
+    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">x</span> <span class="op">=</span> <span class="ident">random</span>();
 
-    <span class="ident">User</span>::<span class="ident">set_age</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">personne</span>, <span class="number">25</span>);
-    <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;{}&quot;</span>, <span class="ident">User</span>::<span class="ident">get_age</span>(<span class="kw-2">&amp;</span><span class="ident">personne</span>));
+    <span class="comment">//je caste le random en 8 bits puis en 32 pour avoir un age plausible et le 32 bits pour respecter ma structure ou age prends un entier de 32 bits</span>
+    <span class="ident">x</span> <span class="op">=</span> <span class="ident">x</span> <span class="kw">as</span> <span class="ident">i8</span> <span class="kw">as</span> <span class="ident">i32</span>;
+    <span class="comment">//si mon x est negatif je le rends positif</span>
+    <span class="kw">if</span> <span class="ident">x</span> <span class="op">&lt;</span> <span class="number">0</span> { <span class="ident">x</span> <span class="kw-2">*</span><span class="op">=</span> <span class="op">-</span><span class="number">1</span>; }
+
+    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">personne</span> <span class="op">=</span> <span class="ident">User</span>::<span class="ident">new</span>(<span class="string">&quot;Albert&quot;</span>, <span class="ident">x</span>);
+    <span class="comment">//affichage des getteurs</span>
+    <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;nom : {}&quot;</span>, <span class="ident">User</span>::<span class="ident">get_nom</span>(<span class="kw-2">&amp;</span><span class="ident">personne</span>));
+    <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;age : {}&quot;</span>, <span class="ident">User</span>::<span class="ident">get_age</span>(<span class="kw-2">&amp;</span><span class="ident">personne</span>));
+
     <span class="ident">User</span>::<span class="ident">to_string</span>(<span class="kw-2">&amp;</span><span class="ident">personne</span>);
 
-    <span class="ident">User</span>::<span class="ident">set_nom</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">personne</span>, <span class="string">&quot;michel&quot;</span>);
-    <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;{}&quot;</span>, <span class="ident">User</span>::<span class="ident">get_nom</span>(<span class="kw-2">&amp;</span><span class="ident">personne</span>));
-    <span class="ident">User</span>::<span class="ident">to_string</span>(<span class="kw-2">&amp;</span><span class="ident">personne</span>);
+    <span class="comment">//utilisation des setteurs</span>
+    <span class="ident">User</span>::<span class="ident">set_nom</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">personne</span>, <span class="string">&quot;Macron&quot;</span>);
+    <span class="ident">User</span>::<span class="ident">set_age</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">personne</span>, <span class="number">20</span>);
 
+    <span class="ident">User</span>::<span class="ident">to_string</span>(<span class="kw-2">&amp;</span><span class="ident">personne</span>);
+}
+
+<span class="attribute">#[<span class="ident">test</span>]</span>
+<span class="kw">fn</span> <span class="ident">test</span>() {
+    <span class="comment">//creation d un user</span>
+    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">p</span> <span class="op">=</span> <span class="ident">User</span>::<span class="ident">new</span>(<span class="string">&quot;richard&quot;</span>, <span class="number">32</span>);
+    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">name</span> <span class="op">=</span> <span class="string">&quot;richard&quot;</span>;
+    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">x</span> <span class="op">=</span> <span class="number">32</span>;
+
+    <span class="comment">//utilisation de assert</span>
+    <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">User</span>::<span class="ident">get_nom</span>(<span class="kw-2">&amp;</span><span class="ident">p</span>), <span class="ident">name</span>, <span class="string">&quot;get nom {} avec {}&quot;</span>, <span class="ident">User</span>::<span class="ident">get_nom</span>(<span class="kw-2">&amp;</span><span class="ident">p</span>), <span class="ident">name</span>);
+    <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">User</span>::<span class="ident">get_age</span>(<span class="kw-2">&amp;</span><span class="ident">p</span>), <span class="ident">x</span>, <span class="string">&quot;get age {} avec {}&quot;</span>, <span class="ident">User</span>::<span class="ident">get_age</span>(<span class="kw-2">&amp;</span><span class="ident">p</span>), <span class="ident">x</span>);
+
+    <span class="ident">User</span>::<span class="ident">set_nom</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">p</span>, <span class="string">&quot;albert&quot;</span>);
+    <span class="ident">User</span>::<span class="ident">set_age</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">p</span>, <span class="number">20</span>);
+    <span class="ident">name</span> <span class="op">=</span> <span class="string">&quot;albert&quot;</span>;
+    <span class="ident">x</span> <span class="op">=</span> <span class="number">20</span>;
+    <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">User</span>::<span class="ident">get_nom</span>(<span class="kw-2">&amp;</span><span class="ident">p</span>), <span class="ident">name</span>, <span class="string">&quot;get nom {} avec {}&quot;</span>, <span class="ident">User</span>::<span class="ident">get_nom</span>(<span class="kw-2">&amp;</span><span class="ident">p</span>), <span class="ident">name</span>);
+    <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">User</span>::<span class="ident">get_age</span>(<span class="kw-2">&amp;</span><span class="ident">p</span>), <span class="ident">x</span>, <span class="string">&quot;get age {} avec {}&quot;</span>, <span class="ident">User</span>::<span class="ident">get_age</span>(<span class="kw-2">&amp;</span><span class="ident">p</span>), <span class="ident">x</span>);
 }
 </pre></div>
 </section><section id="search" class="content hidden"></section><section class="footer"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="projet_perso"></div>
