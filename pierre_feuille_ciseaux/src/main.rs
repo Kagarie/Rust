@@ -26,7 +26,7 @@ fn main() {
 
         /*On parse la saisie de l'utilisateur en nombre
         Si on arrive pas à le parser ou que le nombre n'est pas compris entre 1 et 3 on revient
-        au début de al boucle
+        au début de la boucle
          */
         let number :i32  = match input.trim().parse()  {
             Ok(number)=>
