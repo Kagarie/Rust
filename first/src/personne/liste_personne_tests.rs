@@ -15,7 +15,6 @@ mod test{
     }
 
     #[test]
-    #[ignore]
     fn add_list(){
         let name = String::from("Albert");
         let age = 20;
@@ -83,6 +82,7 @@ mod test{
     }
 
     #[test]
+    #[ignore]
     fn trie_age_list(){
         let name = String::from("Albert");
         let age = 20;
@@ -103,6 +103,4 @@ mod test{
         assert_eq!(15 , list.get_list()[1].get_age());
         assert_eq!(20 , list.get_list()[2].get_age());
     }
-
-
 }

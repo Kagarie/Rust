@@ -1,5 +1,7 @@
 extern crate rand;
 
+use std::i8;
+
 use rand::thread_rng;
 use rand::Rng;
 use random_string::generate;
@@ -10,14 +12,18 @@ use crate::Personne;
 pub struct ListePersonne {
     liste: Vec<Personne>,
 }
+
 impl ListePersonne {
+    ///Constructeur
     pub fn new() -> Self {
         Self { liste: Vec::new() }
     }
+    
+    ///Getteur
     pub fn get_list(&self) -> Vec<Personne> {
         return self.liste.clone();
     }
-
+    
     pub fn add(&mut self, p: Personne) {
         self.liste.push(p);
     }
@@ -66,6 +72,8 @@ impl ListePersonne {
             p.viellir();
         }
     }
+
+    /// >= 80
     pub fn is_dead(&mut self) {
         let mut i = 0;
         let mut nbr_dead = 0;
@@ -80,7 +88,7 @@ impl ListePersonne {
         println!("Nombre de mort {}", nbr_dead);
     }
 
-    pub fn random_personne(&mut self, nbr_person: i64) {
+    pub fn random_personne(&mut self, nbr_person: i8) {
         let str = "abcdefghijkmnopqrstuvwxyz";
         let mut name: String;
         let mut name_len: usize;
@@ -91,7 +99,7 @@ impl ListePersonne {
 
         while i < nbr_person {
             name_len = rng.gen_range(3, 8);
-            name = generate(name_len, str);
+            name = Self::capitalize_first_letter(&generate(name_len, str));
             age = rng.gen_range(0, 90);
             self.add(Personne::new(name, age));
             i += 1;
@@ -114,5 +122,9 @@ impl ListePersonne {
                 i += 1;
             }
         }
+    }
+
+    fn capitalize_first_letter(s: &str) -> String {
+        s[0..1].to_uppercase() + &s[1..]
     }
 }

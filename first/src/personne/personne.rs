@@ -5,6 +5,8 @@ pub struct Personne {
 }
 
 impl Personne {
+
+    ///Constructeur
     pub fn new(name: String, age: i8) -> Self {
         Self {
             name: name,
@@ -12,6 +14,7 @@ impl Personne {
         }
     }
 
+    ///Getteur et setteur
     pub fn get_name(&self) -> String {
         return self.name.clone();
     }
@@ -28,10 +31,12 @@ impl Personne {
         println!("Personne [name : {} , age : {} ]", self.name, self.age);
     }
 
+    ///Ajoute +1 à l'age de la personne
     pub fn viellir(&mut self) {
         self.age += 1;
     }
 
+    ///Return vrai si deux personne et le même nom et le même age
     pub fn eq(&self, p: &Personne) -> bool {
         if String::eq(&self.name, &p.name) && self.age == p.age {
             return true;
@@ -39,6 +44,7 @@ impl Personne {
         return false;
     }
 
+    ///Return vrai si la personne à 18 ans ou plus
     pub fn peut_conduire(&self) -> bool {
         if self.age < 18 {
             return false;
