@@ -1,0 +1,45 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'new_pierre_feuille_ciseau'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=new_pierre_feuille_ciseau",
+                    "--package=new_pierre_feuille_ciseau"
+                ],
+                "filter": {
+                    "name": "new_pierre_feuille_ciseau",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'new_pierre_feuille_ciseau'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=new_pierre_feuille_ciseau",
+                    "--package=new_pierre_feuille_ciseau"
+                ],
+                "filter": {
+                    "name": "new_pierre_feuille_ciseau",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
