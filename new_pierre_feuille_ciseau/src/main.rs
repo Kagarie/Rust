@@ -1,5 +1,6 @@
 mod game;
 use game::jeu::Jeu;
 fn main() {
-    let game = Jeu::new();
+    let mut game = Jeu::new();
+    game.run()
 }

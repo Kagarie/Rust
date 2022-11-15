@@ -7,7 +7,7 @@ pub struct Joueur {
 
 impl Joueur {
     ///Contructeur
-    pub fn new(name : String) -> Self {
+    pub fn new(name: String) -> Self {
         Self {
             name: name,
             point: 0,
