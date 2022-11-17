@@ -62,6 +62,9 @@ impl Jeu {
             }
             Ordering::Equal => {
                 println!("Nombre trouvé !\n");
+                self.joueur
+                    .add_liste(self.nbr_hidden, self.joueur.get_nbr_try());
+                self.joueur.reset_try();
                 return true;
             }
         }
@@ -82,11 +85,19 @@ impl Jeu {
     }
 
     pub fn end(&mut self) {
+        let mut total_try: i8 = 0;
+        for (key, value) in self.joueur.get_liste() {
+            total_try += key;
+            println!(
+                "Nombre de coup joué {} pour trouver le nombre {}",
+                key, value
+            );
+        }
         println!(
             "nombre de coup jouer : {} pour un total de {} victoire(s)\n",
-            self.joueur.get_nbr_try(),
+            total_try,
             self.joueur.get_score()
         );
-        println!("FIN DU JEU !");
+        println!("FIN DU JEU !\n");
     }
 }
