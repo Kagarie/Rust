@@ -1,2 +1,2 @@
 pub mod jeu;
-pub mod joueur;
+mod joueur;
