@@ -6,7 +6,7 @@ use rand::thread_rng;
 use rand::Rng;
 use random_string::generate;
 
-use crate::Personne;
+use crate::personne::personne::Personne;
 
 #[derive(Clone)]
 pub struct ListePersonne {

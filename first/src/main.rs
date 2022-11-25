@@ -1,7 +1,6 @@
 mod personne;
 
 use personne::liste_personne::ListePersonne;
-use personne::personne::Personne;
 
 use std::time::Instant;
 

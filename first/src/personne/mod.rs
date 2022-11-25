@@ -1,5 +1,5 @@
 pub mod liste_personne;
-pub mod personne;
+mod personne;
 
 
 
