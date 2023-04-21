@@ -56,7 +56,7 @@ fn main() {
         quicksort(&mut data);
         let elapsed_time = start_time.elapsed();
 
-           //Lancement du second trie avec le selection_sort
+        //Lancement du second trie avec le selection_sort
         let start_time2 = Instant::now();
         selection_sort(&mut arr2);
         let elapsed_time2 = start_time2.elapsed();
@@ -67,11 +67,12 @@ fn main() {
             elapsed_time.as_secs(),elapsed_time.as_millis(),elapsed_time.as_micros(),elapsed_time.as_nanos()
         );
 
-              // Affichage des résultats
-              let output2 = format!(
-                "\n\nTemps d'exécution selection_sort :\n- {} secondes\n- {} milliseconds\n- {} microseconds\n- {} nanosecondes\n",
-                elapsed_time2.as_secs(),elapsed_time2.as_millis(),elapsed_time2.as_micros(),elapsed_time2.as_nanos()
-            );
+        // Affichage des résultats
+        let output2 = format!(
+            "\n\nTemps d'exécution selection_sort :\n- {} secondes\n- {} milliseconds\n- {} microseconds\n- {} nanosecondes\n",
+            elapsed_time2.as_secs(),elapsed_time2.as_millis(),elapsed_time2.as_micros(),elapsed_time2.as_nanos()
+        );
+
         text_buffer.set_text(&output);
         text_buffer_selection_sort.set_text(&output2)
     });
