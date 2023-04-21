@@ -30,8 +30,7 @@ impl Jeu {
 
     ///Boucle du jeu
     pub fn run(&mut self) {
-        let mut run = true;
-        while run {
+        loop{
             let mut input = String::new();
             self.ordinateur.set_nbr(rand::thread_rng().gen_range(1..3));
             println!("\nPierre [1],Feuille [2] ,Ciseaux[3]\nSaisie :");
@@ -52,8 +51,11 @@ impl Jeu {
                     continue;
                 }
             });
+
             self.verif_jeu();
-            run = self.new_partie();
+            if !self.new_partie(){
+                break;
+            }
         }
         self.victoire();
     }
